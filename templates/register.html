@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="{{ url_for('static', filename='img/favicon.ico')}}" rel="icon">
+    <link href="{{ url_for('static', filename='img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script>
+        function checkPassword() {
+            var password = document.forms["regForm"]["password"].value;
+            var len = password.length;
+            if (len < 8)
+                alert("Password must be atleast 8 character long")
+        }
+        function checkMobile() {
+            var mobile = document.forms["regForm"]["mob"].value;
+            var len = mobile.length;
+            if (len!=10)
+                alert("Invalid Mobile Number")
+        }
+        function validateForm() {
+            var x = document.forms["regForm"]["name"].value;
+            if (x == "" || x == null) {
+                alert("Organisation Name must be filled out");
+                return false;
+            }
+            var b = document.forms["regForm"]["mob"].value;
+            if (b == "" || b == null) {
+                alert("Mobile Number must be filled out");
+                return false;
+            }
+            var z = document.forms["regForm"]["add"].value;
+            if (z == "" || z == null) {
+                alert("Address must be filled out");
+                return false;
+            }
+            var y = document.forms["regForm"]["email"].value;
+            if (y == "" || y == null) {
+                alert("Email must be filled out");
+                return false;
+            }
+
+            var a = document.forms["regForm"]["user"].value;
+            if (a == "" || a == null) {
+                alert("Username must be filled out");
+                return false;
+            }
+
+            var c = document.forms["regForm"]["password"].value;
+            if (c == "" || c == null) {
+                alert("Password must be filled out ");
+                return false;
+            }
+        }
+
+    </script>
+
+    <style>
+        body {
+            background-image: url("https://coolbackgrounds.io/images/backgrounds/black/pure-black-background-f82588d3.jpg");
+        }
+        .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+    </style>
+</head>
+
+<body>
+    <br>
+    <br><br>
+    <table id="t1" border="1" width="10%" align="center">
+        <tr style="background-color:red;">
+            <td class="b1"><a id="a1" href="/">Home</a></td>
+        </tr>
+    </table>
+    <div class="container-fluid">
+        <div class="row-md row-sm row-xs">
+            <div class="col-md-12 div-style">
+
+                <div class="paragraph">
+                    <h1 class="serif" id="headings" style="text-align:center; color:red;">Register</h1>
+                </div>
+                {% if flag == 1%}
+                <div>
+                    <h2 class="serif" id="h2" style="text-align:center; color:orange;">Registered Successfully</h2>
+                </div>
+                {% endif %}
+                {% if f == 1%}
+                <div>
+                    <h2 class="serif" id="h2" style="text-align:center; color:orange;">Erorr! {{h}}</h2>
+                </div>
+                {% endif %}
+                <div>
+                    <center style="align-items:center;" >
+                        <font size="4" style="color: white;">
+                            <form name="regForm" action="/registered" method="post" onsubmit="return validateForm();">
+                                Organization Name:
+                                <input type="text" placeholder="Organization name" name="name" style="color:black;">
+                                <br><br>
+                                Moblie No.:&emsp;&emsp;&emsp;&emsp;
+                                <input type="number" placeholder="Mobile No." name="mob" style="color:black; " onchange="checkMobile();" >
+                                <br>
+                                <br>
+                                Address:&emsp;&emsp;&emsp;&emsp;&emsp;
+                                <input type="text" placeholder="Address" name="add" style="color:black;">
+                                <br>
+                                <br>
+                                Email:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                <input type="email" placeholder="Email Id" name="email" style="color:black;">
+                                <br>
+                                <br>
+                                Username:&emsp;&emsp;&emsp;&emsp;
+                                <input type="text" placeholder="Username" name="user" style="color:black;">
+                                <br>
+                                <br>
+                                Password:&emsp;&emsp;&emsp;&emsp;
+                                <input type="password" placeholder="Password" name="password" style="color:black;" onchange="checkPassword();">
+                                <br><br>
+                                <input style="background:red; color: black;" type="submit" value="Register">
+                                <br>
+                            </form>
+                        </font>
+                    </center>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <div class="footer">
+        <a href="https://github.com/aditi2018cs091/Parking-Record-System" style="color:red;">
+            @ABESIT<br>Parking Records System
+        </a>
+    </div>
+    <br>
+    <br>
+    <br>
+</body>
+</html>

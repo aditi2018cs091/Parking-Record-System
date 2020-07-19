@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="{{ url_for('static', filename='img/favicon.ico')}}" rel="icon">
+    <link href="{{ url_for('static', filename='img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+    <title>Parking Record System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        body {
+            background-image: url("https://coolbackgrounds.io/images/backgrounds/black/pure-black-background-f82588d3.jpg");
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="{{ url_for('static', filename='img/car.png') }}" width="300" height="150" class="center">
+    <div class="serif" style="background-color: black;">
+        <h1 id="h1" style="text-align: center; color:red; font-weight: bold;">Welcome to Parking Records System!!</h1>
+        <br>
+    </div>
+    <div class="container-fluid">
+        <div class="row-md row-sm row-xs">
+            <div class="col-md-12 div-style">
+                <table id="t1" border="1" width="60%" align="center">
+                    <tr style="background-color:red;">
+                        <td class="b1"><a id="a1" href="/">Home</a></td>
+                        <td class="b1"><a id="a1" href="/login">Login</a></td>
+                        <td class="b1"><a id="a1" href="/register">Register</a></td>
+                    </tr>
+                </table>
+                <br>
+                <h3 style="text-align: center;color: red;">Parking Records System</h3>
+                <p id="para" style="color:white;font-size:15px;">
+                    Parking Records system is designed to maintain the records of vehicles in residential apartments, commercial complexes and business complexes.In the present system, a guard has to manually keep the records in a register and it is really difficult to search the history of the vehicle.Using this system, we can store the information such as model number of vehicle, time and date in the database at the entry point and time of exit in the database.In this way all the records are distinctly maintained in the server and we can easily find the history and check in checkout time of any vehicle .this will reduce the chances of human error and also save time.
+                </p>
+                <div class="footer">
+                    <a href="https://github.com/aditi2018cs091/Parking-Record-System" style="color:red;">
+                        @ABESIT<br>Parking Records System
+                    </a>
+                </div>
+                <br>
+                <br >
+                <br />
+</body>
+</html>

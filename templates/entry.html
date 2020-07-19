@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="{{ url_for('static', filename='img/favicon.ico')}}" rel="icon">
+    <link href="{{ url_for('static', filename='img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url("https://ak.picdn.net/shutterstock/videos/33293668/thumb/9.jpg");
+        }
+        .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+    </style>
+</head>
+
+<body>
+    <br>
+    <br>
+    <div class="serif" style="background-color: black;">
+        <h1 id="h1" style="text-align: center; color:red; font-weight: bold;">PARKING MANAGEMENT SYSTEM</h1>
+        <br>
+
+        <table id="t1" border="1" width="60%" align="center">
+            <tr style="background-color:red;">
+                <td class="b1"><a id="a1" href="/entry">Home</a></td>
+                <td class="b1"><a id="a1" href="/add">Add Vehicle</a></td>
+                <td class="b1"><a id="a1" href="/exit">Exit Vehicle</a></td>
+                <td class="b1"><a id="a1" href="/history">History</a></td>
+                <td class="b1"><a id="a1" href="/loginh">Login History</a></td>
+                <td class="b1"><a id="a1" href="/logout">Logout</a></td>
+            </tr>
+
+        </table>
+        <br>
+        <h2 style="text-align: center;color: red; font-size:50px;">Welcome {{k5[0]["username"]}} !</h2>
+        <p id="para" style="color:white; font-size:30px;">
+            Organisation Name: {{k5[0]["name"]}}<br>
+            Email: {{k5[0]["email"]}}
+        </p>
+
+        <div class="footer">
+            <a href="https://github.com/aditi2018cs091/Parking-Record-System" style="color:red;">
+                @ABESIT<br>Parking Records System
+            </a>
+        </div>
+        <br>
+        <br>
+        <br>
+</body>
+</html>
