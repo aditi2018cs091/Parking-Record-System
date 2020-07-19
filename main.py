@@ -144,5 +144,3 @@ def historylogin():
     gt = db.record
     k5 = list(gt.find())
     return render_template('loginhist.html', k5=k5)
-
-app.run(debug=True)
